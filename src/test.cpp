@@ -5,8 +5,7 @@
 #include <gtest/gtest.h>
 #include <Eigen/Core>
 
-#include "interface.h"
-#include "nanoflann.hpp"
+#include "nanoflann_eigen/nanoflann_eigen.h"
 
 using namespace std;
 using namespace nanoflann;

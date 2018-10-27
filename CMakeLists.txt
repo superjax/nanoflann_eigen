@@ -10,6 +10,6 @@ include_directories(include
   ${GTEST_INCLUDE_DIRS}
   ${EIGEN3_INCLUDE_DIRS})
 add_executable(nanoflann_sandbox_test
-  src/main.cpp
+  src/test.cpp
 )
 target_link_libraries(nanoflann_sandbox_test gtest gtest_main ${GTEST_LIBRARIES} pthread)
