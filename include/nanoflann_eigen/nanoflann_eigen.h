@@ -1,3 +1,6 @@
+#ifndef NANOFLANN_EIGEN_H
+#define NANOFLANN_EIGEN_H
+
 #include <cstdlib>
 #include <iostream>
 #include <Eigen/Core>
@@ -59,3 +62,5 @@ void generateRandomPointCloud(PointCloud<T> &pt_cld, const size_t N, const doubl
 		pt_cld.pts[i].z() = max_range * (rand() % 1000) / double(1000);
 	}
 }
+
+#endif
