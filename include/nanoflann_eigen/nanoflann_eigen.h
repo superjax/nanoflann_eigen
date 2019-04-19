@@ -8,16 +8,12 @@
 
 #include "nanoflann.hpp"
 
-using namespace Eigen;
-using namespace std;
-using namespace nanoflann;
-
 template<typename T>
 struct PointCloud
 {
-	typedef Matrix<T,3,1> Vec3;
+    typedef Eigen::Matrix<T,3,1> Vec3;
 	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
-	std::vector<Vec3, aligned_allocator<Vector3d>>  pts;
+    std::vector<Vec3, Eigen::aligned_allocator<Eigen::Vector3d>>  pts;
 
 	// Must return the number of data points
 	inline size_t kdtree_get_point_count() const { return pts.size(); }
@@ -39,13 +35,13 @@ struct PointCloud
 typedef PointCloud<double> PointCloudd;
 typedef PointCloud<double> PointCloudf;
 
-typedef KDTreeSingleIndexDynamicAdaptor<
-	L2_Simple_Adaptor<double, PointCloud<double> > ,
+typedef nanoflann::KDTreeSingleIndexDynamicAdaptor<
+    nanoflann::L2_Simple_Adaptor<double, PointCloud<double> > ,
 	PointCloud<double>,
 	3 /* dim */
 	> KDTree3d;
-typedef KDTreeSingleIndexDynamicAdaptor<
-	L2_Simple_Adaptor<float, PointCloud<float> > ,
+typedef nanoflann::KDTreeSingleIndexDynamicAdaptor<
+    nanoflann::L2_Simple_Adaptor<float, PointCloud<float> > ,
 	PointCloud<float>,
 	3 /* dim */
 	> KDTree3f;

@@ -9,6 +9,7 @@
 
 using namespace std;
 using namespace nanoflann;
+using namespace Eigen;
 
 TEST(KDTreeEigenInterface, KNNSearch)
 {
